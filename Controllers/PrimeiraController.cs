@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using WebservicesCidades.Models;
 
 namespace WebservicesCidades.Controllers
 {
@@ -15,9 +16,11 @@ namespace WebservicesCidades.Controllers
             }[id];
         }*/
 
+        Cidades cidade = new Cidades();
+
         [HttpGet]
-        public string Get(){
-            return null;
+        public IEnumerable<Cidades> Get(){
+            return cidade.Listar();
         }      
     }
 }
